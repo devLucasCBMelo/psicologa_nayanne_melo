@@ -1,6 +1,60 @@
 .container_img {
-  display: flex;
-  flex-direction: row;
-  width: 400px;
-  height: 100px;
+  width: 100%;
+  position: relative;
+  z-index: -1;
+}
+
+.container {
+  position: relative;
+  width: 30%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 9.74%, #000 100%);
+}
+
+.legenda {
+  position: absolute;
+  left: 10px;
+  bottom: 100px;
+}
+
+.legenda h1 {
+  margin: 0;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.legenda2 {
+  position: absolute;
+  left: 10px;
+  bottom: 50px;
+}
+
+.legenda2 h3{
+  margin: 0;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.legenda2 h2 {
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.consulta {
+  position: absolute;
+  background: linear-gradient(to left, #e66465, #9198e5);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  left: 10px;
+  bottom: 20px;
+  padding: 5px;
+}
+
+.consulta img {
+  width: 20px;
+  align-items: center;
 }
