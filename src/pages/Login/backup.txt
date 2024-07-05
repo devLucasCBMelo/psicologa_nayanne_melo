@@ -1,0 +1,165 @@
+.main_login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-image: linear-gradient(transparent);
+  opacity: 1;
+  overflow: hidden;
+}
+
+.main_login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../images/background_page.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6; /* Ajuste a opacidade conforme necessário */
+  z-index: -1; /* Coloca a imagem de fundo atrás dos outros elementos */
+}
+
+.container_img {
+  margin-top: 70px;
+  width: 800px;
+  height: 600px;
+  position: relative;
+  border-radius: 5%;
+  overflow: hidden;
+  display: flex; /* Use flex para posicionar a imagem à direita */
+  justify-content: flex-end; /* Alinha a imagem à direita */
+  align-items: center; /* Centraliza verticalmente o conteúdo */
+}
+
+.gradient {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to left, purple, transparent);
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Certifica-se de que o gradiente está sobre a imagem */
+}
+
+.gradient h1, h2, h3 {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  position: relative; /* Para garantir que os textos fiquem acima do gradiente */
+  z-index: 2; /* Certifica-se de que o texto está acima do gradiente */
+}
+
+h1 {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  font-size: 60px;
+  font-weight: 100;
+  font-style: italic;
+  font-family: monospace;
+}
+
+h2 {
+  margin-top: 100px;
+}
+
+img {
+  height: 100%;
+  width: 50%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+  z-index: 0; /* Garante que a imagem está atrás do gradiente */
+  position: relative; /* Para garantir que o ::after funcione corretamente */
+}
+
+img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to left, purple, transparent);
+  opacity: 0.4;
+  z-index: 1; /* Coloca o gradiente sobre a imagem */
+}
+.main_login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-image: linear-gradient(transparent);
+  opacity: 1;
+  overflow: hidden;
+}
+
+.main_login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../images/background_page.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6; /* Ajuste a opacidade conforme necessário */
+  z-index: -1; /* Coloca a imagem de fundo atrás dos outros elementos */
+}
+
+.container_img {
+  width: 900px;
+  height: 600px;
+  position: relative;
+  border-radius: 5%;
+  overflow: hidden;
+  display: flex; /* Use flex para posicionar a imagem à direita */
+  justify-content: flex-end; /* Alinha a imagem à direita */
+  align-items: center; /* Centraliza verticalmente o conteúdo */
+}
+
+.gradient {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to left, purple, transparent);
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Certifica-se de que o gradiente está sobre a imagem */
+}
+
+.gradient h1, h2, h3 {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  position: relative; /* Para garantir que os textos fiquem acima do gradiente */
+  z-index: 2; /* Certifica-se de que o texto está acima do gradiente */
+}
+
+img {
+  height: 100%;
+  width: 50%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+  z-index: 0; /* Garante que a imagem está atrás do gradiente */
+  position: relative; /* Para garantir que o ::after funcione corretamente */
+}
+
+img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to left, purple, transparent);
+  opacity: 0.4;
+  z-index: 1; /* Coloca o gradiente sobre a imagem */
+}
