@@ -1,13 +1,13 @@
-.container_img {
-  width: 100%;
-  position: relative;
-  z-index: -1;
-}
-
 .container {
   position: relative;
   width: 30%;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 9.74%, #000 100%);
+}
+
+.container_img {
+  width: 100%;
+  position: relative;
+  z-index: -1;
 }
 
 .legenda {
@@ -122,4 +122,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 1000px){
+  .main_login {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    width: 510px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container_img {
+    width: 100%;
+  }
+
+  .legenda h1 {
+    font-size: 45px;
+    margin-bottom: 50px;
+  }
+
+  .legenda2 h3 {
+    font-size: 25px;
+  }
+
+  .legenda2 h2 {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .consulta {
+    width: 200px;
+    height: 40px;
+    padding-bottom: 20px;
+  }
 }
