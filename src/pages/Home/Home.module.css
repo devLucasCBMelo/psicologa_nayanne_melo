@@ -1,6 +1,5 @@
 .container {
   position: relative;
-  width: 100%;
   background: linear-gradient(270deg, rgba(50, 20, 30, 0.5) 10%, #000 90%);
 }
 
@@ -13,23 +12,28 @@
 
 .legenda {
   position: absolute;
-  left: 10px;
+  left: 15px;
   bottom: 100px;
   color: white;
 }
 
-.legenda h1 {
-  font-size: 100px;
+.montserrat_h1 {
+  font-size: 75px;
   margin-bottom: 50px;
+  width: 50%;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
 }
 
 .legenda h2 {
-  font-size: 50px;
+  font-size: 45px;
   margin-bottom: 100px;
 }
 
 .legenda h3 {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .consulta {
@@ -60,12 +64,12 @@
 }
 
 .container_2_left {
-  width: 30%;
-  display: flex;
-  justify-content: center;
   align-items: center;
   background-color: #9198e5;
+  display: flex;
+  justify-content: center;
   transform: rotate(-20deg);
+  width: 30%;
   z-index: -3;
 }
 
