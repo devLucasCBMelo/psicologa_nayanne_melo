@@ -5,7 +5,7 @@ import fotoPerfil from "../../images/foto_de_perfil2.jpg";
 // import fotoLivro from "../../images/foto_com_livro.jpg";
 import styles from "./Home.module.css";
 import nayphone from "../../images/nayphone-removebg.png";
-import { WhatsappButton } from "../../components/WhatsappButton/WhatsappButton";
+import { AgendarConsultaButton } from "../../components/AgendarConsultaButton/AgendarConsultaButton";
 
 function Home() {
   return (
@@ -27,7 +27,7 @@ function Home() {
             <h2>Vamos conversar?</h2>
           </div>
 
-          <WhatsappButton />
+          <AgendarConsultaButton />
         </div>
 
         <div className={styles.container_2}>

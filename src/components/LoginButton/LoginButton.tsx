@@ -59,7 +59,7 @@ export const LoginButton = () => {
             alt="Google Icon"
             className={styles.googleIcon}
           />
-          Entrar com o Google
+          <span>Entrar com o Google</span>
         </button>
       )}
     </nav>

@@ -1,0 +1,35 @@
+.mainBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 30px;
+  background-color: #a2b18b;
+  color: #FAF3F3;
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 10px 30px 10px 30px;
+  border: none;
+}
+
+.mainBody:hover {
+  cursor: pointer;
+}
+
+.mainBody:active {
+  background-color: #FAF3F3;
+  color: #a2b18b;
+}
+
+.mainBody span {
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.calendarIcon {
+  width: 18px;
+  height: 18px;
+}
