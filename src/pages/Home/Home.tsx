@@ -4,9 +4,8 @@ import Header from "../../components/Header/Header";
 import fotoPerfil from "../../images/foto_de_perfil2.jpg";
 // import fotoLivro from "../../images/foto_com_livro.jpg";
 import styles from "./Home.module.css";
-import whatsappLogo from "../../images/whatsapp_logo.png";
 import nayphone from "../../images/nayphone-removebg.png";
-import { LoginButton } from "../../components/LoginButton/LoginButton";
+import { WhatsappButton } from "../../components/WhatsappButton/WhatsappButton";
 
 function Home() {
   return (
@@ -14,7 +13,6 @@ function Home() {
       <Header />
       <div className={styles.main_login}>
         <div className={styles.container}>
-          <LoginButton />
           <img
             className={styles.container_img}
             src={fotoPerfil}
@@ -29,14 +27,7 @@ function Home() {
             <h2>Vamos conversar?</h2>
           </div>
 
-          <button className={styles.consulta}>
-            <img
-              className={styles.consulta_img}
-              src={whatsappLogo}
-              alt="logo do whatsapp"
-            />
-            <h4>Agende a sua primeira consulta</h4>
-          </button>
+          <WhatsappButton />
         </div>
 
         <div className={styles.container_2}>

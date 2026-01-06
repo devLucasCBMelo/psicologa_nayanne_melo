@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../services/supabaseClient";
 import { User } from "@supabase/supabase-js";
 import styles from "./loginbutton.module.css";
+import googleIcon from "../../assets/google-icon-logo-svgrepo-com.svg";
 
 export const LoginButton = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -47,10 +48,19 @@ export const LoginButton = () => {
           <strong className={styles.welcome}>
             Olá, {user.user_metadata.full_name}
           </strong>
-          <button onClick={singOut}>Sair</button>
+          <button onClick={singOut} className={styles.singOut}>
+            Sair
+          </button>
         </div>
       ) : (
-        <button onClick={signInWithGoogle}>Entrar com o Google</button>
+        <button onClick={signInWithGoogle} className={styles.singInWithGoogle}>
+          <img
+            src={googleIcon}
+            alt="Google Icon"
+            className={styles.googleIcon}
+          />
+          Entrar com o Google
+        </button>
       )}
     </nav>
   );
