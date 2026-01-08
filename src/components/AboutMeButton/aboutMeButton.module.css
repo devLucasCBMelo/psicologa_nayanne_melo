@@ -1,0 +1,27 @@
+.mainBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #a2b18b;
+  border-radius: 30px;
+  background-color: #faf3f3;
+  color: #a2b18b;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 1.2rem 1.5rem 1.2rem 1.5rem;
+}
+
+.mainBody:hover {
+  cursor: pointer;
+  background-color: #667669;
+  color: #b4c4ba;
+}
+
+.mainBody:active {
+  background-color: #a2b18b;
+  color: #faf3f3;
+}

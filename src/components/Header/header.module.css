@@ -11,6 +11,13 @@
   justify-content: space-around;
 }
 
+.navBar {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  justify-content: space-around;
+}
+
 
 
 @media screen and (max-width: 1000px) {

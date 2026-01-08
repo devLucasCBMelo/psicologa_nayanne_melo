@@ -10,6 +10,124 @@
   z-index: -1;
 }
 
+.mainHero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #faf3f3;
+}
+
+.mainHeroLeftSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.mainHeroLeftSide p {
+  color: #a2b18b;
+  max-width: 28rem;
+  font-size: 1.125rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.heart {
+  width: 0.875rem;
+  height: 0.875rem;
+  font-weight: 500;
+}
+
+.leftSideTop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #5a6b4d;
+  background-color: #9caf881a;
+  border-radius: 20px;
+  padding: 8px 16px;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  width: 200px;
+}
+
+.title1 {
+  font-size: 3.75rem;
+  line-height: 1;
+  margin-top: 2rem;
+  color: rgb(61, 74, 56);
+  font-weight: 300;
+}
+
+.title2 {
+  color: rgb(156, 175, 136);
+  font-weight: 500;
+  font-size: 3.75rem;
+  margin-bottom: 2rem;
+}
+
+.mainHeroRightSide {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  position: relative;
+}
+
+.mainHeroRightSide img {
+  width: 500px;
+  border-radius: 20px;
+  display: block;
+}
+
+.infoCard {
+  position: absolute;
+  bottom: 30px;
+  left: -20px;
+
+  background-color: white;
+  padding: 15px 25px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.circleIcon {
+  background-color: #F5F7F3;
+  border-radius: 20px;
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoCard strong {
+  color: #5a6b4d;
+}
+
+.infoCard span {
+  color: #a2b18b;
+}
+
+.heartIcon {
+  color: #5a6b4d;
+}
+
+.infoCardText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .legenda {
   position: absolute;
   left: 15px;
@@ -116,6 +234,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.buttonsBar {
+  display: flex;
+  flex-direction: row;
 }
 
 @media screen and (max-width: 1000px){
