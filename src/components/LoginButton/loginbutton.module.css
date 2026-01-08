@@ -1,3 +1,7 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
 .welcome {
   color: #667669;
   font-size: 20px;
@@ -15,6 +19,7 @@
   margin-top: 5px;
   margin-bottom: 5px;
   border-width: 1.5px;
+  cursor: pointer;
 }
 
 .googleIcon {
@@ -28,6 +33,20 @@
   margin-left: 15px;
   width: 60px;
   height: 20px;
+  border: 1px solid red;
+  border-radius: 15px;
+  background-color: white;
+  color: red;
+  cursor: pointer;
+}
+
+.singOut:hover {
+  background-color: #8B0000;
+  color: white;
+}
+
+.singOut:active {
+  background-color: #fa8072;
 }
 
 @media screen and (max-width: 1000px) {

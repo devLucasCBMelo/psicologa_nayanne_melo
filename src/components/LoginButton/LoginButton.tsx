@@ -44,7 +44,7 @@ export const LoginButton = () => {
   return (
     <nav>
       {user ? (
-        <div>
+        <div className={styles.container}>
           <strong className={styles.welcome}>
             Olá, {user.user_metadata.full_name}
           </strong>

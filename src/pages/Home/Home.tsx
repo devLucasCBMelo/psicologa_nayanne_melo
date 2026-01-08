@@ -9,7 +9,7 @@ function Home() {
   return (
     <>
       <Header />
-      <div className={styles.mainLogin}>
+      <div className={styles.mainHome}>
         <MainHero />
         <div className={styles.container_2}>
           <div className={styles.container_2_left}>
