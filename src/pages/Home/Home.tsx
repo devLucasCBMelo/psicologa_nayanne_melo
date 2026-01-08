@@ -1,55 +1,16 @@
 import AboutMe from "../../components/AboutMe/AboutMe";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
-import fotoPerfil from "../../images/foto_de_perfil2.jpg";
-// import fotoLivro from "../../images/foto_com_livro.jpg";
 import styles from "./Home.module.css";
 import nayphone from "../../images/nayphone-removebg.png";
-import { AgendarConsultaButton } from "../../components/AgendarConsultaButton/AgendarConsultaButton";
-import { AboutMeButton } from "../../components/AboutMeButton/AboutMeButton";
-import { Heart } from "lucide-react";
+import { MainHero } from "../../components/MainHero/MainHero";
 
 function Home() {
   return (
     <>
       <Header />
       <div className={styles.mainLogin}>
-        <div className={styles.mainHero}>
-          <div className={styles.mainHeroLeftSide}>
-            <div className={styles.leftSideTop}>
-              <Heart className={styles.heart} />
-              <span>Cuidando da sua saúde mental</span>
-            </div>
-            <h1 className={styles.title1}>Encontre seu</h1>
-            <h1 className={styles.title2}>equilíbrio interior</h1>
-            <p>
-              Um espaço seguro e acolhedor para você explorar suas emoções,
-              superar desafios e construir uma vida mais plena e significativa
-            </p>
-            <div className={styles.buttonsBar}>
-              <AgendarConsultaButton />
-              <AboutMeButton />
-            </div>
-          </div>
-
-          <div className={styles.mainHeroRightSide}>
-            <img
-              src={fotoPerfil}
-              alt="foto de perfil da psicóloga Nayanne Melo"
-            />
-
-            <div className={styles.infoCard}>
-              <div className={styles.circleIcon}>
-                <Heart className={styles.heartIcon} />
-              </div>
-              <div className={styles.infoCardText}>
-                <strong>+100 pacientes</strong>
-                <span>atendidos com carinho</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <MainHero />
         <div className={styles.container_2}>
           <div className={styles.container_2_left}>
             <img src={nayphone} alt="nayanne no telefone" />
