@@ -1,4 +1,4 @@
-import { LoginButton } from "../LoginButton/LoginButton";
+import { LoginButton } from "../GoogleButton/GoogleButton";
 import styles from "./header.module.css";
 
 function Header() {

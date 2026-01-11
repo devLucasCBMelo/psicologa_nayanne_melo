@@ -1,4 +1,4 @@
-import { Heart } from "lucide-react";
+import { Heart, Shield } from "lucide-react";
 import styles from "./MainHero.module.css";
 import { AgendarConsultaButton } from "../AgendarConsultaButton/AgendarConsultaButton";
 import { AboutMeButton } from "../AboutMeButton/AboutMeButton";
@@ -21,6 +21,18 @@ export const MainHero = () => {
         <div className={styles.buttonsBar}>
           <AgendarConsultaButton />
           <AboutMeButton />
+        </div>
+
+        <div className={styles.lastContainer}>
+          <div className={styles.shieldContainer}>
+            <Shield className={styles.shieldIcon} />
+            <span>Sigilo Garantido</span>
+          </div>
+
+          <div className={styles.greendotContainer}>
+            <span className={styles.greendot}></span>
+            <span>Atendimento online e presencial</span>
+          </div>
         </div>
       </div>
 

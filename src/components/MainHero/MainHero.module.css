@@ -59,6 +59,53 @@
   margin-bottom: 2rem;
 }
 
+.lastContainer {
+  display: flex;
+  flex-direction: row;
+  padding-top: 1rem;
+  gap: 2rem;
+  color: #5a6b4d;
+}
+
+.shieldContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.shieldIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.greendotContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.greendot {
+  background: greenyellow;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+
+  animation: pulsar-aura 2s infinite;
+}
+
+@keyframes pulsar-aura {
+  0% {
+    box-shadow: 0 0 0 0px rgba(85, 124, 85, 0.7);
+  }
+  70% {
+    /* A sombra cresce e vai ficando transparente */
+    box-shadow: 0 0 0 10px rgba(85, 124, 85, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0px rgba(85, 124, 85, 0);
+  }
+}
+
 .mainHeroRightSide {
   display: flex;
   justify-content: center;
