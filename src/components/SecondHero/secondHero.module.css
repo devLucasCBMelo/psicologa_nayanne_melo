@@ -1,0 +1,31 @@
+.secondHeroContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
+  text-align: center;
+  padding-top: 6rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 6rem;
+}
+
+.specialties {
+  margin-bottom: 4rem;
+}
+
+.specialties span {
+  color: #9CAF88;
+  font-weight: bold;
+}
+
+.specialties h2 {
+  color: rgb(61, 74, 56);
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.specialties p {
+  color: #9CAF88;
+}

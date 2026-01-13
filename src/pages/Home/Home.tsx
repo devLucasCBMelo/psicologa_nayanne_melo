@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import styles from "./Home.module.css";
 import nayphone from "../../images/nayphone-removebg.png";
 import { MainHero } from "../../components/MainHero/MainHero";
+import { SecondHero } from "../../components/SecondHero/SecondHero";
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       <Header />
       <div className={styles.mainHome}>
         <MainHero />
+        <SecondHero />
         <div className={styles.container_2}>
           <div className={styles.container_2_left}>
             <img src={nayphone} alt="nayanne no telefone" />
