@@ -118,18 +118,24 @@
   justify-content: center;
   width: 50%;
   position: relative;
+  background-color: #d4c4a8;
+  transform: rotate(5deg);
+  z-index: +1;
+  border-radius: 20px;
 }
 
 .mainHeroRightSide img {
   width: 500px;
   border-radius: 20px;
   display: block;
+  transform: rotate(-5deg);
 }
 
 .infoCard {
   position: absolute;
   bottom: 30px;
   left: -20px;
+  transform: rotate(-5deg);
 
   background-color: white;
   padding: 15px 25px;
