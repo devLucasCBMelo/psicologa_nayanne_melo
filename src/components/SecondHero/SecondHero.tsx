@@ -1,6 +1,7 @@
-import { Brain, Heart, Sparkle, Users } from "lucide-react";
+import { Brain, Heart, MapPin, Sparkle, Users, VideoIcon } from "lucide-react";
 import { CardList } from "../CardList/CardList";
 import styles from "./secondHero.module.css";
+import { ServiceButton } from "../ServiceButton/ServiceButton";
 
 export const SecondHero = () => {
   const cards = [
@@ -37,6 +38,20 @@ export const SecondHero = () => {
         </p>
       </div>
       <CardList cards={cards} />
+      <div className={styles.secondHeroButtons}>
+        <ServiceButton
+          icon={<VideoIcon color="#9CAF88" />}
+          description="Atendimento Online"
+          color="#9CAF88"
+          backgroundcolor="#E8F0E8"
+        />
+        <ServiceButton
+          icon={<MapPin color="#C4A87D" />}
+          description="Atendimento Presencial"
+          color="#C4A87D"
+          backgroundcolor="#F5F0ED"
+        />
+      </div>
     </section>
   );
 };

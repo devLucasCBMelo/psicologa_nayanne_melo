@@ -1,0 +1,17 @@
+.serviceButtonContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--btn-bg);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-radius: 1rem;
+  gap: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.serviceButtonDescription {
+  color: var(--btn-color)
+}

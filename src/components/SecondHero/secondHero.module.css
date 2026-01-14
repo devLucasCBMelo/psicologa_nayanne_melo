@@ -7,6 +7,7 @@
   padding-left: 3rem;
   padding-right: 3rem;
   padding-bottom: 6rem;
+  max-width: 1024px;
 }
 
 .specialties {
@@ -28,4 +29,12 @@
 
 .specialties p {
   color: #9CAF88;
+}
+
+.secondHeroButtons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 4rem;
+  gap: 2rem;
+  justify-content: center;
 }
