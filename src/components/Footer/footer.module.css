@@ -25,6 +25,10 @@
   font-family: sans-serif;
 }
 
+.footerContainer li {
+  margin-top: 8px;
+}
+
 .topContent {
   display: flex;
   flex-direction: row;

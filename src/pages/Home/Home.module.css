@@ -68,6 +68,10 @@
   color: #7D9A6A;
 }
 
+.container_4 button:hover {
+  background-color: #FAF3F3;
+}
+
 .container_4 button:hover .arrowRightIcon {
   transform: translateX(6px);
 }
