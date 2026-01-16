@@ -129,6 +129,7 @@
   border-radius: 20px;
   display: block;
   transform: rotate(-5deg);
+  object-fit: cover;
 }
 
 .infoCard {

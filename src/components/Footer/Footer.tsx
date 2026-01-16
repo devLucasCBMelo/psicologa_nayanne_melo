@@ -35,8 +35,6 @@ function Footer() {
           <ul>
             <li>contato@psicologia.com</li>
             <li>(83) 99681-2018</li>
-            <li>Calcadão, xxx - Centro, Solânea</li>
-            <li>Liv Mall, xxx - Bessa, João Pessoa</li>
           </ul>
         </div>
       </div>

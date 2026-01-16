@@ -18,6 +18,11 @@
   justify-content: space-around;
 }
 
+.link, .link:visited {
+  color: #667669;
+  text-decoration: none;
+}
+
 
 
 @media screen and (max-width: 1000px) {
