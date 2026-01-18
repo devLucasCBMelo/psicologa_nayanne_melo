@@ -6,17 +6,20 @@ import googleIcon from "../../assets/google-icon-logo-svgrepo-com.svg";
 
 export const LoginButton = () => {
   const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // 1. Verifica se já existe uma sessão ativa ao carregar a página
     supabase.auth.getUser().then(({ data: { user } }) => {
       setUser(user);
+      setLoading(false);
     });
 
     // 2. Escuta mudanças na autenticação (login/logout) automaticamente
     const { data: authListener } = supabase.auth.onAuthStateChange(
       (_event, session) => {
         setUser(session?.user ?? null);
+        setLoading(false);
       }
     );
 
@@ -39,6 +42,10 @@ export const LoginButton = () => {
 
   async function singOut() {
     await supabase.auth.signOut();
+  }
+
+  if (loading) {
+    return null;
   }
 
   return (
