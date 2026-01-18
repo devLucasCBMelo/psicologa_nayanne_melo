@@ -1,0 +1,183 @@
+.mainHero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  background-color: #FAF3F3;
+  width: 100%;
+}
+
+.container {
+ display: flex;
+ flex-direction: row;
+ gap: 4rem;
+ padding-left: 3rem;
+ padding-right: 3rem;
+}
+
+.mainHeroLeftSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.mainHeroLeftSide p {
+  color: #a2b18b;
+  max-width: 28rem;
+  font-size: 1.125rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.heart {
+  width: 0.875rem;
+  height: 0.875rem;
+  font-weight: 500;
+}
+
+.leftSideTop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #5a6b4d;
+  background-color: #9caf881a;
+  border-radius: 20px;
+  padding: 8px 16px;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  width: 200px;
+}
+
+.title1 {
+  font-size: 3.75rem;
+  line-height: 1;
+  margin-top: 2rem;
+  color: rgb(61, 74, 56);
+  font-weight: 300;
+}
+
+.title2 {
+  color: rgb(156, 175, 136);
+  font-weight: 500;
+  font-size: 3.75rem;
+  margin-bottom: 2rem;
+}
+
+.lastContainer {
+  display: flex;
+  flex-direction: row;
+  padding-top: 1rem;
+  gap: 2rem;
+  color: #5a6b4d;
+}
+
+.shieldContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.shieldIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.greendotContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.greendot {
+  background: greenyellow;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+
+  animation: pulsar-aura 2s infinite;
+}
+
+@keyframes pulsar-aura {
+  0% {
+    box-shadow: 0 0 0 0px rgba(85, 124, 85, 0.7);
+  }
+  70% {
+    /* A sombra cresce e vai ficando transparente */
+    box-shadow: 0 0 0 10px rgba(85, 124, 85, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0px rgba(85, 124, 85, 0);
+  }
+}
+
+.mainHeroRightSide {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  position: relative;
+  background-color: #d4c4a8;
+  transform: rotate(5deg);
+  z-index: +1;
+  border-radius: 20px;
+}
+
+.mainHeroRightSide img {
+  width: 500px;
+  border-radius: 20px;
+  display: block;
+  transform: rotate(-5deg);
+  object-fit: cover;
+}
+
+.infoCard {
+  position: absolute;
+  bottom: 30px;
+  left: -20px;
+  transform: rotate(-5deg);
+
+  background-color: white;
+  padding: 15px 25px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.circleIcon {
+  background-color: #F5F7F3;
+  border-radius: 20px;
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoCard strong {
+  color: #5a6b4d;
+}
+
+.infoCard span {
+  color: #a2b18b;
+}
+
+.heartIcon {
+  color: #5a6b4d;
+}
+
+.infoCardText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buttonsBar {
+  display: flex;
+  flex-direction: row;
+}

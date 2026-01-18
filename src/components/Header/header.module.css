@@ -1,11 +1,29 @@
 .main_header {
-  background-color: blueviolet;
-  color: white;
+  color: #667669;
+  background-color: #FAF3F3;
   font-weight: bolder;
   font-size: 12px;
   text-align: center;
-  height: 30px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  justify-content: space-around;
+}
+
+.link, .link:visited {
+  color: #667669;
+  text-decoration: none;
+}
+
+
 
 @media screen and (max-width: 1000px) {
   .main_header {

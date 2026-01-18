@@ -1,0 +1,20 @@
+.consulta {
+  background: linear-gradient(to left, #e66465, #9198e5);
+  border: none;
+  border-radius: 10px;
+  bottom: 20px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  font-weight: bold;
+  left: 100px;
+  padding: 5px;
+  position: absolute;
+}
+
+.consulta img {
+  width: 20px;
+  align-items: center;
+  margin-top: 0px;
+}

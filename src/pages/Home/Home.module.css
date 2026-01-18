@@ -1,0 +1,132 @@
+.mainHome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container_4 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.container_4_div {
+  background: linear-gradient(to bottom right, #9CAF88, #7D9A6A);
+  padding: 5rem;
+  border-radius: 3rem;
+  max-width: 1024px;
+  text-align: center;
+}
+
+.container_4 h2 {
+  margin: 0 0 24px;
+  font-size: 48px;
+  font-family: sans-serif;
+  color: #FFFFFF;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.container_4 h2 span {
+  font-weight: 500;
+  font-size: 48px;
+  font-family: sans-serif;
+}
+
+.container_4 p {
+  color: #fffc;
+  line-height: 1.625;
+  margin-bottom: 2.5rem;
+}
+
+.container_4 button {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  gap: 0.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  cursor: pointer;
+  border-radius: 30px;
+  border-style: none;
+}
+
+.container_4 button span {
+  color: #5A6B4D;
+}
+
+.calendarIcon {
+  color: #7D9A6A;
+}
+
+.arrowRightIcon {
+  color: #7D9A6A;
+}
+
+.container_4 button:hover {
+  background-color: #FAF3F3;
+}
+
+.container_4 button:hover .arrowRightIcon {
+  transform: translateX(6px);
+}
+
+.container_4_last_p {
+  color: #fffc;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+
+@media screen and (max-width: 1000px){
+  .mainHome {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .container_img {
+    width: 100%;
+  }
+
+  .legenda {
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .legenda h1 {
+    font-size: 30px;
+    padding: 5px;
+    height: 100%;
+  }
+
+  .legenda2 h3 {
+    font-size: 25px;
+    padding: 5px;
+  }
+
+  .legenda2 h2 {
+    font-size: 20px;
+    padding: 5px;
+  }
+
+  .consulta {
+    width: 200px;
+    height: 40px;
+    padding-bottom: 20px;
+  }
+}
