@@ -1,4 +1,11 @@
-import { ArrowLeft, Calendar, FilmIcon, PinIcon } from "lucide-react";
+import {
+  ArrowLeft,
+  Calendar,
+  CreditCard,
+  FilmIcon,
+  PinIcon,
+  VideoIcon,
+} from "lucide-react";
 import Header from "../../components/Header/Header";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -6,8 +13,8 @@ import styles from "./toSchedule.module.css";
 import { motion } from "framer-motion";
 
 function ToSchedule() {
-  const [session, setSession] = useState("Online");
-  const [serviceValue, setServiceValue] = useState(200);
+  const [session] = useState("Online");
+  const [serviceValue] = useState(200);
 
   return (
     <>
@@ -119,18 +126,32 @@ function ToSchedule() {
             </section>
 
             <section className={styles.rightSection}>
-              <h3>Resumo da consulta</h3>
-              <div>
+              <div className={styles.resumeContainer}>
+                <h3>Resumo da consulta</h3>
                 <div>
-                  <FilmIcon />
-                </div>
-                <div>
-                  <p>Tipo de sessão</p>
-                  <p>`{session}`</p>
-                </div>
-                <div>
-                  <span>Valor da consulta</span>
-                  <span>R$ {serviceValue},00</span>
+                  <div className={styles.resumeContainer_top}>
+                    <div className={styles.iconRightSideContainer}>
+                      <VideoIcon className={styles.iconRightSide} />
+                    </div>
+                    <div>
+                      <p className={styles.firstP}>Tipo de sessão</p>
+                      <p className={styles.secondP}>{session}</p>
+                    </div>
+                  </div>
+                  <div className={styles.lineDiv}></div>
+                  <div className={styles.valueContainer}>
+                    <span className={styles.firstSpan}>Valor da consulta</span>
+                    <span className={styles.secondSpan}>
+                      R$ {serviceValue},00
+                    </span>
+                  </div>
+                  <button>
+                    <CreditCard className={styles.creditCardIcon} />
+                    Confirmar e Pagar
+                  </button>
+                  <p className={styles.thirdP}>
+                    Pagamento seguro via PIX ou cartão
+                  </p>
                 </div>
               </div>
             </section>
