@@ -1,0 +1,78 @@
+.infoContainer {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.namephoneContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.nameContainer, .phoneContainer {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.emailContainer {
+  margin-top: 1rem;
+}
+
+.nameContainer input, .phoneContainer input, .emailContainer input { 
+  font-size: 0.875rem;
+  font-family: inherit;
+  line-height: 1.25rem;
+  font-weight: inherit;
+  color: inherit;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+
+  background-color: transparent;
+
+  border-color: rgb(229, 231, 235);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.75rem;
+  
+  width: 100%;
+  height: 2.25rem;
+
+  display: flex;
+  margin-top: 0.25rem;
+  box-sizing: border-box;
+}
+
+.infoContainer_top {
+  display: flex;
+  padding: 1.5rem;
+  flex-direction: column;
+}
+
+.infoContainer_top div {
+  color: rgb(61, 74, 56);
+  /* letter-spacing: -0.25rem; */
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.infoContainer_bottom {
+  padding-top: 0;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+}
+
+.infoContainer_bottom label {
+  color: rgb(90, 107, 77);
+  line-height: 1;
+  font-weight: 500;
+  font-size: 0.875rem;
+  box-sizing: border-box;
+}
