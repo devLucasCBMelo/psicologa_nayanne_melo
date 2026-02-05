@@ -1,4 +1,4 @@
-import { CreditCard, VideoIcon } from "lucide-react";
+import { Calendar, CreditCard, VideoIcon } from "lucide-react";
 import styles from "./appointmentResumeCard.module.css";
 
 type SessionType = "Online" | "Presencial";
@@ -6,16 +6,34 @@ type SessionType = "Online" | "Presencial";
 type AppointmentResumeType = {
   session: SessionType;
   serviceValue: number;
+  date?: Date | null;
 };
 
 export const AppointmentResumeCard = ({
   session,
   serviceValue,
+  date,
 }: AppointmentResumeType) => {
+  const formattedDate = date?.toLocaleDateString("pt-BR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
   return (
     <div className={styles.resumeContainer}>
       <h3>Resumo da consulta</h3>
       <div>
+        {date ? (
+          <div className={styles.resumeContainer_top}>
+            <div className={styles.iconRightSideContainer}>
+              <Calendar className={styles.iconRightSide} />
+            </div>
+            <div>
+              <p className={styles.firstP}>Data</p>
+              <p className={styles.secondP}>{formattedDate}</p>
+            </div>
+          </div>
+        ) : null}
         <div className={styles.resumeContainer_top}>
           <div className={styles.iconRightSideContainer}>
             <VideoIcon className={styles.iconRightSide} />

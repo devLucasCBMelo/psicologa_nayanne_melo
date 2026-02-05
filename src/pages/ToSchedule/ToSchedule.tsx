@@ -7,13 +7,16 @@ import { motion } from "framer-motion";
 import { InfoCard } from "../../components/InfoCard/InfoCard";
 import { KindOfServiceCard } from "../../components/KindOfServiceCard/KindOfServiceCard";
 import { AppointmentResumeCard } from "../../components/AppointmentResumeCard/AppointmentResumeCard";
+import { DayOfAppointmentCard } from "../../components/DayOfAppointmentCard/DayOfAppointmentCard";
+import { AppointmentScheduleCard } from "../../components/AppointmentScheduleCard/AppointmentScheduleCard";
 
 type SessionType = "Online" | "Presencial";
 
 function ToSchedule() {
   const [session, setSession] = useState<SessionType>("Online");
   const [serviceValue] = useState(200);
-
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  console.log("Horário", selectedDate);
   return (
     <>
       <Header />
@@ -57,12 +60,20 @@ function ToSchedule() {
                 session={session}
                 onChangeSession={setSession}
               />
+
+              <DayOfAppointmentCard
+                selectedDate={selectedDate}
+                onChangeDate={setSelectedDate}
+              />
+
+              <AppointmentScheduleCard selectedDate={selectedDate} />
             </section>
 
             <section className={styles.rightSection}>
               <AppointmentResumeCard
                 session={session}
                 serviceValue={serviceValue}
+                date={selectedDate}
               />
             </section>
           </div>
