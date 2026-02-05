@@ -1,0 +1,16 @@
+.container {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1)
+}
+
+.scheduleOfAppointment_title {
+  color: rgb(61, 74, 56);
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+
+  display: flex;
+  padding: 1.5rem;
+  flex-direction: column;
+}

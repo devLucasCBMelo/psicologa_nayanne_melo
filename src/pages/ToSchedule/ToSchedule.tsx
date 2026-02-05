@@ -1,14 +1,22 @@
-import { ArrowLeft, Calendar, FilmIcon, PinIcon } from "lucide-react";
+import { ArrowLeft, Calendar } from "lucide-react";
 import Header from "../../components/Header/Header";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./toSchedule.module.css";
 import { motion } from "framer-motion";
+import { InfoCard } from "../../components/InfoCard/InfoCard";
+import { KindOfServiceCard } from "../../components/KindOfServiceCard/KindOfServiceCard";
+import { AppointmentResumeCard } from "../../components/AppointmentResumeCard/AppointmentResumeCard";
+import { DayOfAppointmentCard } from "../../components/DayOfAppointmentCard/DayOfAppointmentCard";
+import { AppointmentScheduleCard } from "../../components/AppointmentScheduleCard/AppointmentScheduleCard";
+
+type SessionType = "Online" | "Presencial";
 
 function ToSchedule() {
-  const [session, setSession] = useState("Online");
-  const [serviceValue, setServiceValue] = useState(200);
-
+  const [session, setSession] = useState<SessionType>("Online");
+  const [serviceValue] = useState(200);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  console.log("Horário", selectedDate);
   return (
     <>
       <Header />
@@ -46,93 +54,27 @@ function ToSchedule() {
 
           <div className={styles.sectionsContainer}>
             <section className={styles.leftSection}>
-              <div className={styles.infoContainer}>
-                <div className={styles.infoContainer_top}>
-                  <div>Seus Dados</div>
-                </div>
+              <InfoCard />
 
-                <div className={styles.infoContainer_bottom}>
-                  <div className={styles.namephoneContainer}>
-                    <div className={styles.nameContainer}>
-                      <label htmlFor="name">Nome completo</label>
-                      <input
-                        type="text"
-                        id="name"
-                        placeholder="Digite seu nome completo"
-                      />
-                    </div>
+              <KindOfServiceCard
+                session={session}
+                onChangeSession={setSession}
+              />
 
-                    <div className={styles.phoneContainer}>
-                      <label htmlFor="">Telefone / Whatsapp</label>
-                      <input type="text" placeholder="(00) 00000-0000" />
-                    </div>
-                  </div>
+              <DayOfAppointmentCard
+                selectedDate={selectedDate}
+                onChangeDate={setSelectedDate}
+              />
 
-                  <div className={styles.emailContainer}>
-                    <label htmlFor="email">Email</label>
-                    <input type="email" placeholder="seu-email@gmail.com" />
-                  </div>
-                </div>
-              </div>
-
-              <div className={styles.kindOfServiceContainer}>
-                <div className={styles.kindOfServiceContainer_title}>
-                  <div>Tipo de Atendimento</div>
-                </div>
-
-                <div className={styles.kindOfServiceContainer_bottom}>
-                  <div className={styles.labelsContainer}>
-                    <div className={styles.label_01}>
-                      <div className={styles.label_content}>
-                        <div className={styles.label_01_pin}>
-                          <FilmIcon className={styles.pin_01} />
-                        </div>
-                        <div>
-                          <p className={styles.kindOfService_description}>
-                            Online
-                          </p>
-                          <p className={styles.kindOfService_place}>
-                            Via vídeochamada
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className={styles.label_02}>
-                      <div className={styles.label_content}>
-                        <div className={styles.label_02_pin}>
-                          <PinIcon className={styles.pin_02} />
-                        </div>
-                        <div>
-                          <p className={styles.kindOfService_description}>
-                            Presencial
-                          </p>
-                          <p className={styles.kindOfService_place}>
-                            No consultório
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <AppointmentScheduleCard selectedDate={selectedDate} />
             </section>
 
             <section className={styles.rightSection}>
-              <h3>Resumo da consulta</h3>
-              <div>
-                <div>
-                  <FilmIcon />
-                </div>
-                <div>
-                  <p>Tipo de sessão</p>
-                  <p>`{session}`</p>
-                </div>
-                <div>
-                  <span>Valor da consulta</span>
-                  <span>R$ {serviceValue},00</span>
-                </div>
-              </div>
+              <AppointmentResumeCard
+                session={session}
+                serviceValue={serviceValue}
+                date={selectedDate}
+              />
             </section>
           </div>
         </motion.div>

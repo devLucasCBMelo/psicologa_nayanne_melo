@@ -4,8 +4,15 @@ import styles from "./Home.module.css";
 import { MainHero } from "../../components/MainHero/MainHero";
 import { SecondHero } from "../../components/SecondHero/SecondHero";
 import { ArrowRight, Calendar } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
+  const GoToSchedulePage = () => {
+    navigate("/psicologa_nayanne_melo/agendamento");
+  };
+
   return (
     <>
       <Header />
@@ -22,7 +29,7 @@ function Home() {
               O primeiro passo é sempre o mais importante. Agende sua consulta e
               permita-se cuidar da sua saúde mental.
             </p>
-            <button>
+            <button onClick={GoToSchedulePage}>
               <Calendar className={styles.calendarIcon} />
               <span>Agendar Consulta</span>
               <ArrowRight className={styles.arrowRightIcon} />
