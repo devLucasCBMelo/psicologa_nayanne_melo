@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { supabase } from "../../services/supabaseClient";
-import styles from "./AppointmentScheduleCard.module.css";
+import { useEffect, useState } from 'react';
+import { supabase } from '../../services/supabaseClient';
+import styles from './AppointmentScheduleCard.module.css';
 
 type SlotsType = {
   start: string;
@@ -8,11 +8,11 @@ type SlotsType = {
   interval: number;
 };
 
-type SlotType = {
+/* type SlotType = {
   start: string;
   end: string;
   available: boolean;
-};
+}; */
 
 type AppointmentScheduleType = {
   selectedDate: Date | null;
@@ -24,7 +24,7 @@ export const AppointmentScheduleCard = ({
   const [appointments, setAppointments] = useState<string[]>([]);
 
   function dateToISO(date: Date) {
-    return date.toISOString().split("T")[0];
+    return date.toISOString().split('T')[0];
   }
 
   const isoDate = selectedDate ? dateToISO(selectedDate) : null;
@@ -32,16 +32,16 @@ export const AppointmentScheduleCard = ({
   useEffect(() => {
     async function fetchAppointments() {
       const { data, error } = await supabase
-        .from("appointments")
-        .select("appointment_time")
-        .eq("appointment_date", isoDate);
+        .from('appointments')
+        .select('appointment_time')
+        .eq('appointment_date', isoDate);
 
       if (data) {
         setAppointments(data.map((a) => a.appointment_time));
       }
 
       if (error) {
-        console.log("Erro do tipo:", error);
+        console.log('Erro do tipo:', error);
       }
     }
 
@@ -51,18 +51,18 @@ export const AppointmentScheduleCard = ({
   }, [isoDate]);
 
   function addMinutes(time: string, minutes: number) {
-    const [hours, mins] = time.split(":").map(Number);
+    const [hours, mins] = time.split(':').map(Number);
     const date = new Date();
     date.setHours(hours, mins + minutes, 0, 0);
 
-    const h = String(date.getHours()).padStart(2, "0");
-    const m = String(date.getMinutes()).padStart(2, "0");
+    const h = String(date.getHours()).padStart(2, '0');
+    const m = String(date.getMinutes()).padStart(2, '0');
 
     return `${h}:${m}`;
   }
 
   function timeToMinutes(time: string) {
-    const [h, m] = time.split(":").map(Number);
+    const [h, m] = time.split(':').map(Number);
     return h * 60 + m;
   }
 
@@ -72,22 +72,23 @@ export const AppointmentScheduleCard = ({
     let current = start;
 
     while (timeToMinutes(current) < timeToMinutes(end)) {
-      slots.push(current);
-      current = addMinutes(current, interval);
+      const next = addMinutes(current, interval);
+      slots.push({ start: current, end: next });
+      current = next;
     }
 
     return slots;
   }
 
   const slots = generateSlots({
-    start: "08:00",
-    end: "18:00",
+    start: '08:00',
+    end: '18:00',
     interval: 60,
   });
 
-  const schedule = slots.map((time) => ({
-    time,
-    available: !appointments.includes(time),
+  const schedule = slots.map((slot) => ({
+    time: slot.start,
+    available: !appointments.includes(slot.start),
   }));
 
   console.log(schedule[0]);
