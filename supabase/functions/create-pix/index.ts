@@ -14,10 +14,11 @@ Deno.serve(async (req) => {
 
   try {
     // 3. Recebe os dados do seu agendamento (nome, email e valor da consulta)
-    const { nome, email, valor, dataConsulta, horaConsulta } = await req.json()
+    const { nome, email, valor, dataConsulta, horaConsulta, token, installments, payment_method_id, issuer_id } = await req.json()
     
     // 4. Pega o Token que você salvou nos 'secrets' do Supabase
     const accessToken = Deno.env.get('MERCADO_PAGO_ACCESS_TOKEN')
+    const isCard = !!token;
 
     if (!accessToken) {
       throw new Error('MERCADO_PAGO_ACCESS_TOKEN não encontrado nas variáveis de ambiente.')
@@ -29,18 +30,28 @@ Deno.serve(async (req) => {
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${accessToken}`,
-        "X-Idempotency-Key": crypto.randomUUID() // Garante que não haja cobrança duplicada
+        "X-Idempotency-Key": crypto.randomUUID()
       },
       body: JSON.stringify({
         transaction_amount: valor,
         description: `Consulta Psicologia: ${dataConsulta} às ${horaConsulta} - Paciente: ${nome}`,
-        payment_method_id: "pix",
+        
+        // Se for cartão, usamos os dados do Brick. Se não, usamos "pix"
+        payment_method_id: isCard ? payment_method_id : "pix",
+        
+        // Campos específicos para cartão (são ignorados se for PIX)
+        ...(isCard && {
+          token,
+          installments: Number(installments),
+          issuer_id: Number(issuer_id),
+        }),
+    
         payer: {
           email: email,
           first_name: nome.split(' ')[0],
         },
       }),
-    })
+    });
 
     const result = await response.json()
 

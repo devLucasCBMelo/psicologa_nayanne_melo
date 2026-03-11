@@ -17,7 +17,7 @@ function ToSchedule() {
   const [phoneNumber, setPhoneNumber] = useState<string | null>(null);
   const [email, setEmail] = useState<string | null>(null);
   const [session, setSession] = useState<SessionType>('Online');
-  const [serviceValue] = useState(200);
+  const [serviceValue] = useState(2);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedHour, setSelectedHour] = useState<string | null>(null);
 

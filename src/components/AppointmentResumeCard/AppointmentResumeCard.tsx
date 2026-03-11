@@ -1,7 +1,5 @@
 import { Calendar, CreditCard, VideoIcon, WatchIcon } from 'lucide-react';
 import styles from './appointmentResumeCard.module.css';
-import { useState } from 'react';
-import { supabase } from '../../services/supabaseClient';
 import { useNavigate } from 'react-router-dom';
 
 type SessionType = 'Online' | 'Presencial';
@@ -25,18 +23,13 @@ export const AppointmentResumeCard = ({
   date,
   hour,
 }: AppointmentResumeType) => {
-  const [loading, setLoading] = useState(false);
-  const [paymentData, setPaymentData] = useState<{
-    qr_code_64: string;
-    qr_code_copy: string;
-  } | null>(null);
   const formattedDate = date?.toLocaleDateString('pt-BR', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
   });
 
-  const handlePayment = async () => {
+  /* const handlePayment = async () => {
     if (!fullName || !phoneNumber || !email) {
       alert('Por favor, preencha seu Nome, E-mail e Telefone');
       return;
@@ -62,16 +55,25 @@ export const AppointmentResumeCard = ({
     } finally {
       setLoading(false);
     }
-  };
+  }; */
 
   const navigate = useNavigate();
   const GoToPaymentPage = () => {
-    if (!fullName || !phoneNumber || !email) {
-      alert('Por favor, preencha seu Nome, E-mail e Telefone');
+    if (!fullName || !phoneNumber || !email || !date) {
+      alert('Por favor, preencha seus dados e selecione uma data.');
       return;
     }
 
-    navigate('/pagamento');
+    navigate('/pagamento', {
+      state: {
+        fullName,
+        email,
+        phoneNumber,
+        serviceValue,
+        date: date.toISOString(),
+        hour,
+      },
+    });
   };
 
   return (
@@ -114,39 +116,16 @@ export const AppointmentResumeCard = ({
           <span className={styles.firstSpan}>Valor da consulta</span>
           <span className={styles.secondSpan}>R$ {serviceValue},00</span>
         </div>
-        {!paymentData ? (
-          <>
-            <button
-              className={styles.paymentButton}
-              onClick={GoToPaymentPage}
-              disabled={loading || !hour}
-            >
-              <CreditCard className={styles.creditCardIcon} />
-              {loading ? 'Gerando o PIX....' : 'Confirmar e Pagar'}
-            </button>
-            <p className={styles.thirdP}>Pagamento seguro via PIX ou cartão</p>
-          </>
-        ) : (
-          <div className={styles.pixResult}>
-            <h4>Aponte a câmera para o QR Code:</h4>
-            <div className={styles.pixImageContainer}>
-              <img
-                src={`data:image/png;base64,${paymentData.qr_code_64}`}
-                alt='QR Code PIX'
-                className={styles.qrCodeImage}
-              />
-            </div>
-            <button
-              className={styles.copyButton}
-              onClick={() => {
-                navigator.clipboard.writeText(paymentData.qr_code_copy);
-                alert('Código copiado!');
-              }}
-            >
-              Copiar código PIX
-            </button>
-          </div>
-        )}
+
+        <button
+          className={styles.paymentButton}
+          onClick={GoToPaymentPage}
+          disabled={!hour}
+        >
+          <CreditCard className={styles.creditCardIcon} />
+          Confirmar e ir paga Pagamento
+        </button>
+        <p className={styles.thirdP}>Pagamento seguro via PIX ou cartão</p>
       </div>
     </div>
   );
