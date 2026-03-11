@@ -8,18 +8,16 @@ type SlotsType = {
   interval: number;
 };
 
-/* type SlotType = {
-  start: string;
-  end: string;
-  available: boolean;
-}; */
-
 type AppointmentScheduleType = {
   selectedDate: Date | null;
+  selectedHour: string | null;
+  setSelectedHour: (time: string) => void;
 };
 
 export const AppointmentScheduleCard = ({
   selectedDate,
+  selectedHour,
+  setSelectedHour,
 }: AppointmentScheduleType) => {
   const [appointments, setAppointments] = useState<string[]>([]);
 
@@ -80,6 +78,10 @@ export const AppointmentScheduleCard = ({
     return slots;
   }
 
+  function handleSelectHour(time: string) {
+    setSelectedHour(time);
+  }
+
   const slots = generateSlots({
     start: '08:00',
     end: '18:00',
@@ -87,11 +89,10 @@ export const AppointmentScheduleCard = ({
   });
 
   const schedule = slots.map((slot) => ({
-    time: slot.start,
+    start: slot.start,
+    end: slot.end,
     available: !appointments.includes(slot.start),
   }));
-
-  console.log(schedule[0]);
 
   return (
     <>
@@ -101,10 +102,23 @@ export const AppointmentScheduleCard = ({
             <div>Horários Disponíveis</div>
           </div>
 
-          <div>
-            {schedule.map((slot, key) => (
-              <button key={key}>{slot.time}</button>
-            ))}
+          <div className={styles.timeGrid}>
+            {schedule.map((slot, key) => {
+              const isSelected = selectedHour === slot.start;
+
+              return (
+                <button
+                  key={key}
+                  disabled={!slot.available}
+                  onClick={() => handleSelectHour(slot.start)}
+                  className={`${styles.timeButton} ${
+                    isSelected ? styles.selected : ''
+                  }`}
+                >
+                  {slot.start} - {slot.end}
+                </button>
+              );
+            })}
           </div>
         </div>
       )}

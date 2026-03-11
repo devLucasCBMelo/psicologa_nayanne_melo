@@ -1,17 +1,16 @@
 // import { useState } from 'react'
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import Home from "./pages/Home/Home";
-import ToSchedule from "./pages/ToSchedule/ToSchedule";
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import Home from './pages/Home/Home';
+import ToSchedule from './pages/ToSchedule/ToSchedule';
+import { Payment } from './pages/Payment/Payment';
 
 function App() {
   return (
     <Routes>
-      <Route path="/psicologa_nayanne_melo" element={<Home />} />
-      <Route
-        path="/psicologa_nayanne_melo/agendamento"
-        element={<ToSchedule />}
-      />
+      <Route path='/' element={<Home />} />
+      <Route path='/agendamento' element={<ToSchedule />} />
+      <Route path='/pagamento' element={<Payment />} />
     </Routes>
   );
 }

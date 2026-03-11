@@ -1,0 +1,143 @@
+/* payment.module.css */
+
+.paymentPage {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: inherit;
+}
+
+.paymentPage h2 {
+  color: #6b7c5f; /* Tom de verde da marca */
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+}
+
+.summary {
+  background-color: #f8f9fa;
+  padding: 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #9CAF88;
+}
+
+.summary p {
+  margin: 0.5rem 0;
+  color: #4a4a4a;
+  font-size: 0.95rem;
+}
+
+.summary strong {
+  color: #333;
+}
+
+/* Container onde o SDK do Mercado Pago injeta o formulário */
+#paymentBrick_container {
+  min-height: 400px; /* Evita que o layout "pule" enquanto carrega */
+}
+
+/* Overlay de carregamento para bloquear a tela durante o processamento */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-weight: 600;
+  color: #6b7c5f;
+  backdrop-filter: blur(2px);
+}
+
+/* Container que envolve o resultado (PIX ou Sucesso Cartão) */
+.resultContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #fdfdfd;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Seção específica do PIX */
+.pixSection {
+  text-align: center;
+  width: 100%;
+}
+
+.pixSection h3 {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.pixSection img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+/* Botão de Copiar Código PIX */
+.copyButton {
+  background-color: #9CAF88; /* Verde da marca */
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  max-width: 300px;
+}
+
+.copyButton:hover {
+  background-color: #8a9c78;
+}
+
+/* Seção de Sucesso (Cartão) */
+.successSection {
+  text-align: center;
+  padding: 1rem;
+}
+
+.successSection h3 {
+  color: #2e7d32; /* Verde sucesso */
+  margin-bottom: 0.5rem;
+}
+
+.successSection p {
+  color: #666;
+}
+
+/* Animação suave para a entrada do resultado */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo responsivo */
+@media (max-width: 640px) {
+  .paymentPage {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .paymentPage h2 {
+    font-size: 1.5rem;
+  }
+}

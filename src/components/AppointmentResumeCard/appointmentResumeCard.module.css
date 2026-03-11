@@ -93,7 +93,37 @@
   box-sizing: border-box;
 }
 
-.resumeContainer button {
+/* .resumeContainer button {
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  background-color: #9CAF88;
+  color: white;
+
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  border-radius: 0.75rem;
+  border-width: 0;
+  border-style: solid;
+  gap: 0.5rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 2.25rem;
+  cursor: pointer;
+  text-transform: none;
+
+  font-family: inherit;
+  box-sizing: border-box;
+  box-shadow: rgba(156, 175, 136, 0.25);
+} */
+
+.paymentButton {
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -123,9 +153,16 @@
   box-shadow: rgba(156, 175, 136, 0.25);
 }
 
-.resumeContainer button:hover {
+/* Hover apenas se o botão NÃO estiver desabilitado */
+.paymentButton:not(:disabled):hover {
   background-color: #6b7c5f;
-  transition: 0.2s;
+}
+
+/* Estilo fixo para quando estiver desabilitado */
+.paymentButton:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .creditCardIcon {
@@ -141,4 +178,29 @@
   text-align: center;
   margin-top: 1rem;
   box-sizing: border-box;
+}
+
+.pixResult h4 {
+  color: rgb(107, 124, 95);
+  font-size: 1.25rem;
+  line-height: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+  box-sizing: border-box;
+}
+
+.pixImageContainer {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.qrCodeImage {
+  width: 150px;
+  height: 150px;
+}
+
+.copyButton {
+
 }

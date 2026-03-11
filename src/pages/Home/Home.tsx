@@ -1,16 +1,16 @@
-import Footer from "../../components/Footer/Footer";
-import Header from "../../components/Header/Header";
-import styles from "./Home.module.css";
-import { MainHero } from "../../components/MainHero/MainHero";
-import { SecondHero } from "../../components/SecondHero/SecondHero";
-import { ArrowRight, Calendar } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
+import styles from './Home.module.css';
+import { MainHero } from '../../components/MainHero/MainHero';
+import { SecondHero } from '../../components/SecondHero/SecondHero';
+import { ArrowRight, Calendar } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const navigate = useNavigate();
 
   const GoToSchedulePage = () => {
-    navigate("/psicologa_nayanne_melo/agendamento");
+    navigate('/agendamento');
   };
 
   return (
