@@ -1,0 +1,85 @@
+{paymentResult.type === 'pix' ? (
+          <div className={styles.pixSection}>
+            <h3>Quase lá! Escaneie o QR Code abaixo:</h3>
+
+            {/* Usando o novo nome da variável: qr_code_64 */}
+            <img
+              src={`data:image/png;base64,${paymentResult.qr_code_64}`}
+              alt='QR Code PIX'
+            />
+
+            <p className={styles.instructions}>
+              Ou utilize o código Copia e Cola abaixo:
+            </p>
+
+            <button
+              className={styles.copyButton}
+              onClick={() => {
+                // Usando o novo nome da variável: qr_code_copy
+                navigator.clipboard.writeText(paymentResult.qr_code_copy);
+                alert('Código copiado!');
+              }}
+            >
+              Copiar Código PIX
+            </button>
+          </div>
+        ) : (
+          // CASO SEJA CARTÃO
+          <div className={styles.successSection}>
+            <h3>
+              ✅ Pagamento{' '}
+              {paymentResult.status === 'approved'
+                ? 'Aprovado'
+                : 'Em Processamento'}
+              !
+            </h3>
+            <p>
+              Sua consulta para o dia {state.date} às {state.hour} está
+              confirmada.
+            </p>
+            <p>Você receberá os detalhes da sessão em breve.</p>
+          </div>
+        )}
+
+
+
+        /////////////////////////////////////////////////
+
+        {paymentResult ? (
+          <div className={styles.resultContainer}>
+            {paymentResult.point_of_interaction ? (
+              <div className={styles.pixSection}>
+                <h3>Quase lá! Escaneie o QR Code abaixo:</h3>
+                <img
+                  src={`data:image/png;base64,${paymentResult.point_of_interaction.transaction_data.qr_code_base64}`}
+                  alt='QR Code PIX'
+                />
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText(
+                      paymentResult.point_of_interaction.transaction_data
+                        .qr_code
+                    );
+                    alert('Código copiado!');
+                  }}
+                >
+                  Copiar Código Copia e Cola
+                </button>
+              </div>
+            ) : (
+              // CASO SEJA CARTÃO (Status aprovado)
+              <div className={styles.successSection}>
+                <h3>✅ Pagamento Aprovado!</h3>
+                <p>
+                  Sua consulta está confirmada. Você receberá os detalhes por
+                  e-mail.
+                </p>
+              </div>
+            )}
+          </div>
+        ) : (
+          <>
+            {!sdkLoaded && <p>Carregando opções de pagamento...</p>}
+            <div id='paymentBrick_container'></div>
+          </>
+        )}

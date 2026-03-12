@@ -124,6 +124,44 @@
   color: #666;
 }
 
+.formWrapper {
+  width: 100%;
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-top: 20px;
+  color: #6b7c5f;
+}
+
+.sdkLoading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: #666;
+  font-size: 14px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #009ee3;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.qrCodeImage {
+  display: block;
+  margin: 20px auto;
+  border: 1px solid #eee;
+  padding: 10px;
+  background: white;
+}
+
 /* Animação suave para a entrada do resultado */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
